@@ -26,9 +26,16 @@ func newPage(s string, n *html.Node, sc scraper) (*page, error) {
 
 	ids := map[string]struct{}{}
 
+	// 6.7.9. Navigating to a fragment
+	// http://w3c.github.io/html/browsers.html#navigating-to-a-fragment-identifier
 	scrape.FindAllNested(n, func(n *html.Node) bool {
 		if s := scrape.Attr(n, "id"); s != "" {
 			ids[s] = struct{}{}
+		}
+		if n.Data == "a" {
+			if s := scrape.Attr(n, "name"); s != "" {
+				ids[s] = struct{}{}
+			}
 		}
 
 		return false
