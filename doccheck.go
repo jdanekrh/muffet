@@ -212,12 +212,13 @@ var Whitelist = [][]string{
 	{"https://broker-amq-0.broker-amq-headless.amq-demo.svc", "lookup broker-amq-0.broker-amq-headless.amq-demo.svc: no such host"},
 	{"http://broker-amq-0.broker-amq-headless.amq-demo.svc", "lookup broker-amq-0.broker-amq-headless.amq-demo.svc: no such host"},
 
-	{"http://kafka.apache.org/documentation/#security_authz", "id #security_authz not found"},
 	{"http://kafka.apache.org/20/documentation.html#connectconfigs", "id #connectconfigs not found"},
 	{"http://kafka.apache.org/20/documentation.html#producerconfigs", "id #producerconfigs not found"},
 	{"http://kafka.apache.org/20/documentation.html#brokerconfigs", "id #brokerconfigs not found"},
 	{"http://kafka.apache.org/20/documentation.html#newconsumerconfigs", "id #newconsumerconfigs not found"},
-
+	// todo: url does not have /20/?
+	{"http://kafka.apache.org/documentation/#security_authz", "id #security_authz not found"},
+	{"http://kafka.apache.org/documentation/#brokerconfigs", "id #brokerconfigs not found"},
 	{"http://kafka.apache.org/documentation/#compaction", "id #connectconfigs not found"},
 
 	{"https://access.redhat.com/containers/#/product/RedHatAmq", "id #/product/RedHatAmq not found"},
@@ -290,6 +291,33 @@ var Whitelist = [][]string{
 	//{"https://access.redhat.com/solutions/3269061", "dialing to the given TCP address timed out"},
 	//{"https://issues.jboss.org/jira/browse/ENTMQBR-1995", "dialing to the given TCP address timed out"},
 	//{"https://issues.jboss.org/jira/browse/ENTMQBR-1045", "dialing to the given TCP address timed out"},
+
+	// stage
+
+	{"https://access.stage.redhat.com/ecosystem/search/#/ecosystem", ""},
+	{"https://doc-stage.usersys.redhat.com/solution-engine", ""},
+	{"https://access.stage.redhat.com/insights/?intcmp=mm|t|c1|rhaidec2015&", ""},
+	{"https://access.stage.redhat.com/insights/info/?intcmp=mm|p|im|rhaijan2016&", ""},
+	{"https://access.stage.redhat.com/insights/info/?intcmp=mm|t|c1|rhaidec2015&", ""},
+	{"https://access.stage.redhat.com/security/security-updates/#/cve", ""},
+	{"https://access.stage.redhat.com/products/red-hat-certificate-system/", "timeout"},
+	{"https://access.stage.redhat.com/management/subscriptions/#active", ""},
+
+	{"https://access.stage.redhat.com/changeLanguage?language=pt", ""},
+	{"https://access.stage.redhat.com/changeLanguage?language=zh_CN", ""},
+	{"https://access.stage.redhat.com/changeLanguage?language=fr", ""},
+	{"https://access.stage.redhat.com/changeLanguage?language=en", ""},
+	{"https://access.stage.redhat.com/changeLanguage?language=de", ""},
+	{"https://access.stage.redhat.com/changeLanguage?language=ko", ""},
+	{"https://access.stage.redhat.com/changeLanguage?language=ru", ""},
+	{"https://access.stage.redhat.com/changeLanguage?language=es", ""},
+	{"https://access.stage.redhat.com/changeLanguage?language=it", ""},
+	{"https://access.stage.redhat.com/changeLanguage?language=ja", ""},
+
+	{"https://access.stage.redhat.com/security/security-updates/#/security-labs", ""},
+	{"https://access.stage.redhat.com/security/security-updates/#/security-advisories", ""},
+	{"https://access.stage.redhat.com/support/cases/", ""},
+	{"https://www.stage.redhat.com/wapps/ugc/register.html", ""},
 }
 
 func fetchVersions(f fetcher, u string) (versions []string, err error) {
