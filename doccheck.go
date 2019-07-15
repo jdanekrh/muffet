@@ -319,6 +319,8 @@ var Whitelist = [][]string{
 	{"https://access.stage.redhat.com/support/cases/", ""},
 	{"https://www.stage.redhat.com/wapps/ugc/register.html", ""},
 	{"https://access.stage.redhat.com/solution-engine", ""},
+
+	{"https://access.redhat.com/solution-engine", "404"},
 }
 
 func fetchVersions(f fetcher, u string) (versions []string, err error) {
