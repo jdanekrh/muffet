@@ -49,7 +49,7 @@ func mustNot(e error) {
 }
 
 func isSinglePageHtmlDocLink(s string) bool {
-	return strings.Contains(s, "/html-single/")
+	return strings.Contains(s, "/html-single/") || strings.Contains(s, "127.0.0.1:")
 }
 
 //^ERROR: 0, ([a-zA-Z:/\.#_?=0-9%&-]+) (.*)
@@ -318,6 +318,7 @@ var Whitelist = [][]string{
 	{"https://access.stage.redhat.com/security/security-updates/#/security-advisories", ""},
 	{"https://access.stage.redhat.com/support/cases/", ""},
 	{"https://www.stage.redhat.com/wapps/ugc/register.html", ""},
+	{"https://access.stage.redhat.com/solution-engine", ""},
 }
 
 func fetchVersions(f fetcher, u string) (versions []string, err error) {

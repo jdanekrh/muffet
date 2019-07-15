@@ -46,3 +46,10 @@ func TestMaine(t *testing.T) {
 		}
 	}
 }
+
+func TestLocalFilesCheck(t *testing.T) {
+	path := "/home/jdanek/repos/docs/amq-docs/build/"
+	links := serveDirectory(path)
+
+	CheckListOfLinks(links)
+}
