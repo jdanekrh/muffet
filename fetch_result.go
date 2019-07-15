@@ -1,4 +1,4 @@
-package main
+package muffet
 
 type fetchResult struct {
 	statusCode int

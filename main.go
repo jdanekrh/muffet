@@ -1,9 +1,16 @@
-package main
+package muffet
 
 import (
+	"crypto/tls"
+	"crypto/x509"
+	"flag"
 	"fmt"
 	"github.com/valyala/fasthttp"
 	"io"
+	"io/ioutil"
+	"log"
+	"net"
+	"os"
 )
 
 func main() {
@@ -49,26 +56,22 @@ func main() {
 			for link, _ := range a.links {
 				//log.Println("fetching " + link)
 
-				for _, whitelisted := range Whitelist {
-					if link == whitelisted[0] {
-						goto skip
-					}
-				}
-
-				r, err = f.Fetch(link)
-
-				if r.statusCode != 200 || err != nil {
-					fmt.Printf("**\t%s\n", link)
-					fmt.Printf("***\t%s\n", err)
-
-					addFailure(failures, docPage, link, err.Error())
-				}
-
-			skip:
+		for _, whitelisted := range Whitelist {
+			if link == whitelisted[0] {
+				goto skip
 			}
 		}
 
-		printFailures(failures)
+		r, err = f.Fetch(link)
+
+		if r.statusCode != 200 || err != nil {
+			fmt.Printf("**\t%s\n", link)
+			fmt.Printf("***\t%s\n", err)
+
+			addFailure(failures, docPage, link, err.Error())
+		}
+
+	skip:
 	}
 }
 

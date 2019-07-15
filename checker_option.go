@@ -1,4 +1,4 @@
-package main
+package muffet
 
 type checkerOptions struct {
 	fetcherOptions

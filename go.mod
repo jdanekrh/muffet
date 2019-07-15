@@ -1,4 +1,4 @@
-module github.com/raviqqe/muffet
+module muffet
 
 go 1.11
 
