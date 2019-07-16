@@ -211,6 +211,7 @@ var Whitelist = [][]string{
 	{"http://localhost:8161/jolokia/read/org.apache.activemq.artemis:module=Core,type=Server/Version", ""},
 	{"https://broker-amq-0.broker-amq-headless.amq-demo.svc", "lookup broker-amq-0.broker-amq-headless.amq-demo.svc: no such host"},
 	{"http://broker-amq-0.broker-amq-headless.amq-demo.svc", "lookup broker-amq-0.broker-amq-headless.amq-demo.svc: no such host"},
+	{"http://ocp.node.ip:ConsolePortNumber", ""},
 
 	{"http://kafka.apache.org/20/documentation.html#connectconfigs", "id #connectconfigs not found"},
 	{"http://kafka.apache.org/20/documentation.html#producerconfigs", "id #producerconfigs not found"},
@@ -321,6 +322,45 @@ var Whitelist = [][]string{
 	{"https://access.stage.redhat.com/solution-engine", ""},
 
 	{"https://access.redhat.com/solution-engine", "404"},
+
+	{"https://github.com/amqp/rhea#api", "404"},
+	{"https://docs.google.com/presentation/d/1AV-qETM104Nuff43ryPR4hBqfY_knB6rF4ozDE_UXvw/edit#slide=id.gc80b71c4f_4_22", ""},
+
+	{"https://pantheon.cee.redhat.com/#/help", ""},
+
+	{"https://github.com/rh-messaging/amq-docs", ""},
+
+	// known issues
+
+	// broken links in internal guide
+	{"https://addons.mozilla.org/en-US/firefox/addon/firesizer/", ""},
+	{"https://addons.mozilla.org/en-US/firefox/addon/the-addon-bar/", ""},
+
+	// old url, there is redirect, so it works
+	{"https://github.com/rh-messaging/amq7-documentation-contrib/blob/contrib/internal/templates/templates.zip", ""},
+
+	// broken there too
+	{"https://gitlab.cee.redhat.com/red-hat-jboss-enterprise-application-platform-documentation/eap-documentation/blob/master/internal-resources/contributor-guide.adoc#fix_rebase_merge_conflicts", ""},
+
+	// https://issues.jboss.org/browse/ENTMQBR-2633
+	// http://127.0.0.1:39275/broker-configuring/index.html
+	{"https://access.redhat.com/documentation/en-us/red_hat_amq/7.4/html-single/using_amq_console#securing_amq_console_and_amq_broker_connections", ""},
+
+	// todo: don't have console page now?
+	{"http://127.0.0.1:\\d+/console/%7BBrokerManagingBookUrl%7D#upgrading_7.1", ""},
+
+	// https://issues.jboss.org/browse/ENTMQBR-2634
+	{"http://127.0.0.1:\\d+/broker-managing/%7BBrokerManagingBookUrl%7D#upgrading_7.1", ""},
+
+	// https://issues.jboss.org/browse/ENTMQBR-2635
+	{"http://127.0.0.1:\\d+/broker-configuring/index.html#clustering", ""},
+	{"http://127.0.0.1:\\d+/broker-configuring/index.html#cluster_connections", ""},
+
+	// https://issues.jboss.org/browse/ENTMQCL-1538
+	{"http://qpid.apache.org/releases/qpid-proton-0.28.0/proton/python/api/proton.handlers.MessagingHandler-class.html", ""},
+
+	// https://github.com/apache/qpid-dispatch/pull/530
+	{"https://qpid.apache.org/releases/qpid-dispatch-1.7.0/man/qdstat.html#_qdstat_autolinks", ""},
 }
 
 func fetchVersions(f fetcher, u string) (versions []string, err error) {
