@@ -330,11 +330,19 @@ var Whitelist = [][]string{
 
 	{"https://github.com/rh-messaging/amq-docs", ""},
 
+	// future url deployed
+
+	{"https://access.redhat.com/documentation/en-us/red_hat_amq/7.4/html/using_the_amq_jms_client/examples", ""},
+
 	// known issues
+
+	// https://issues.jboss.org/browse/ENTMQIC-2292
+	// router issues
 
 	// broken links in internal guide
 	{"https://addons.mozilla.org/en-US/firefox/addon/firesizer/", ""},
 	{"https://addons.mozilla.org/en-US/firefox/addon/the-addon-bar/", ""},
+	{"https://pantheon.cee.redhat.com/%3Cmark%3E/titles/red_hat_amq", ""},
 
 	// old url, there is redirect, so it works
 	{"https://github.com/rh-messaging/amq7-documentation-contrib/blob/contrib/internal/templates/templates.zip", ""},
@@ -342,19 +350,22 @@ var Whitelist = [][]string{
 	// broken there too
 	{"https://gitlab.cee.redhat.com/red-hat-jboss-enterprise-application-platform-documentation/eap-documentation/blob/master/internal-resources/contributor-guide.adoc#fix_rebase_merge_conflicts", ""},
 
+	// not sure, don't care
+	{"https://github.com/redhat-documentation/modular-docs#modular-documentation-reference-guide", ""},
+
 	// https://issues.jboss.org/browse/ENTMQBR-2633
 	// http://127.0.0.1:39275/broker-configuring/index.html
 	{"https://access.redhat.com/documentation/en-us/red_hat_amq/7.4/html-single/using_amq_console#securing_amq_console_and_amq_broker_connections", ""},
 
 	// todo: don't have console page now?
-	{"http://127.0.0.1:\\d+/console/%7BBrokerManagingBookUrl%7D#upgrading_7.1", ""},
+	{"/console/%7BBrokerManagingBookUrl%7D#upgrading_7.1", ""},
 
 	// https://issues.jboss.org/browse/ENTMQBR-2634
-	{"http://127.0.0.1:\\d+/broker-managing/%7BBrokerManagingBookUrl%7D#upgrading_7.1", ""},
+	{"/broker-managing/%7BBrokerManagingBookUrl%7D#upgrading_7.1", ""},
 
 	// https://issues.jboss.org/browse/ENTMQBR-2635
-	{"http://127.0.0.1:\\d+/broker-configuring/index.html#clustering", ""},
-	{"http://127.0.0.1:\\d+/broker-configuring/index.html#cluster_connections", ""},
+	{"/broker-configuring/index.html#clustering", ""},
+	{"/broker-configuring/index.html#cluster_connections", ""},
 
 	// https://issues.jboss.org/browse/ENTMQCL-1538
 	{"http://qpid.apache.org/releases/qpid-proton-0.28.0/proton/python/api/proton.handlers.MessagingHandler-class.html", ""},

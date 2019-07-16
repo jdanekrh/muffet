@@ -11,6 +11,7 @@ import (
 	"log"
 	"net"
 	"os"
+	"strings"
 )
 
 // todo it works on my machine with staging docs even without custom cert file?
@@ -183,7 +184,7 @@ func checkDocPage(docPage string, f fetcher, failures Failures) {
 		//log.Println("fetching " + link)
 
 		for _, whitelisted := range Whitelist {
-			if link == whitelisted[0] {
+			if strings.HasSuffix(link, whitelisted[0]) {
 				goto skip
 			}
 		}
